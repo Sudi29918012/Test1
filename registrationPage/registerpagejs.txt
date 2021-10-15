@@ -1,0 +1,8 @@
+const elementutil=require(../util/elementUtil');
+class RegisterPage{
+	get headerName(){
+		return ('h3.Your personal information')
+	}
+}
+module.exports=new RegisterPage()
+	

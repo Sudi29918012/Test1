@@ -1,0 +1,26 @@
+const elementutil=require(../util/elementUtil');
+class LoginPage{
+	//page locator
+	get username(){
+		return $('#email_create')
+	}
+	get password(){
+		return $('#passwd')
+	}
+	get signInlink(){
+		return $("//a[text()='Sign in']")
+	}
+	>>>>>>>>>>>>>>>>>>>>>//page actions:
+	getPageTitle(){
+		return elementUtil.getTitle();
+	}
+	isSignInlinkExists(){
+		return elementutil.isDisplayed(this.signInlink)
+	}
+	doSignIn(emailID,pwd){
+		elementUtil.setValue(this.username, emailID)
+		elementUtil.setValue(this.password,pwd)
+		elementUtil.click(this.signInlink)
+	}
+}
+module.export=new LoginPage();

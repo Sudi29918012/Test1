@@ -1,0 +1,17 @@
+exports.config ={
+	runner: 'loacl',  // to run the test on a remote location.
+	path: '/',
+	Username='kiddoshreyu@gmail.com'
+	Password='12345'
+	AccountName="Sudipta Das'
+	browserName='chrome',
+	baseUrl:'http://automationpractice.com/index.php '
+	services: ['chromedriver'],
+	beforeTest: function(){               >>>>>//These are global assertions
+		const chai =require('chai')	
+		const chaiWebdriver= require('chai-webdriverio').default
+		chai.use(chaiWebdriver(browser))
+		global.assert=chai.assert
+		global.should=chai.should
+		global.expect=chai.expect
+	},

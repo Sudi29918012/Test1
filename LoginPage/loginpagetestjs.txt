@@ -1,0 +1,21 @@
+const loginPage =require("../pages/loginpage")
+const configData= require('../config');
+
+describe("Login Page element handle",function(){
+	it("Enter loginpage title", function(){
+		browser.url('/')
+		browser.maximizeWindow()
+		const title=loginPage.getpageTitle()
+		console.log('login page title is:',title);
+		assert.equal('My Store',title,'title is not found')
+		})
+	it("Verify Sign up link ", function(){
+		assert.equal(true,loginPage.isSignInlinkExists(),Sign up not present')
+		})
+	it("Verify login ", function(){
+		//loginPage.doLogin('kiddoshreyu@gmail.com','12345');
+		loginPage.doLogin('configData.username','configData.password');
+		})
+	
+	
+})

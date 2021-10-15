@@ -1,0 +1,32 @@
+const loginPage =require("../pages/loginpage")
+const configData= require('../config');
+const homePage=require('../pages/homepage')
+
+describe('Home page test', function(){
+	it('verify homepage title',function(){
+		browser.url('/')
+		browser.maximizeWindow()
+		loginPage.doLogin('configData.username','configData.password');	
+		const title=homepage.getPageTitle()
+		console.log('home page title is',title)
+		assert.equal('My account - My Store',title,'title not found))
+	})
+	it('verify loggedinacc name',function(){
+		assert.equal(config.accountname,homepage.getLoggedinAccName(),'Acc name is invalid')
+		
+	})
+	it('Click on tshirts',function(){
+		const tshirtlink = $('//a[text()='T-shirts'])[1]')
+		tshirtlink.click
+		browser.pause(3000)
+	})
+	it('Mouse over on the item and click add to card option',function(){
+		$('//h5[@itemprop='name']//child::a').moveTo()
+		conts addToCart = $('//span[text()='Add to cart']')
+		addToCart.click()
+		conts clickOnCart=$('//b[text()='Cart']')
+		clickOnCart.click()
+		})
+	
+
+})

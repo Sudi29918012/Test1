@@ -1,0 +1,19 @@
+const elementUtil=require('../util/elementUtil');
+
+class HomePage{
+	get header(){
+		return (h1.My account')
+	}
+	get accountName(){
+		return ('span.account')
+	}
+	getPageTitle(){
+		return elementUtil.getPageTitle()
+	}
+	getLoggedinAccName(){
+		return elementUtil.getText(this.accountName)
+	}
+	
+
+}
+module.exports=new HomePage()

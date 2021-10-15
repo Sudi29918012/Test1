@@ -1,0 +1,56 @@
+const loginPage =require("../pages/loginpage")
+const configData= require('../config');
+const homePage=require("../pages/homepage");
+const registerPage=require('../pages.registerPage')
+
+describe("Register page element handle",function(){
+	it("get header of registration page", function(){
+		browser.url('/')
+		browser.maximizeWindow()
+		const title=registerpage.getheadername()
+		console.log(title)
+		assert.equal('Your personal information',title,'header is invalid')
+	})
+	it("Enter a value in the email field", function(){
+		browser.url("http://automationpractice.com/index.php")
+		const emailadd= $('input.is_required validate account_input form-control')
+		emailadd.setValue("Kiddoshreyu@gmail.com")
+		const clickOnCreatacc= $("//i[text()='Create an account']")
+		clickOnCreatacc.click();
+		})
+	it("Enter a value in the email field", function(){
+		browser.url("http://automationpractice.com/index.php")
+		const title=$('#id_gender1')
+		title.click()
+		const firstname=$('#customer_firstname')
+		firstname.setvalue("Sudipta")
+		const lastname=$('#customer_lastname')
+		lastname.setvalue("Das")
+		const password=$('#passwd')
+		password.setValue('12345')
+		})
+	it("select drop down value by text", function{
+		browser.url("http://automationpractice.com/index.php")
+		$('#days').selectByVisibleText('21')
+		$('#months').selectByVisibleText('August')
+		$('#year').selectByVisibleText('1992')
+		browser.pause(2000)
+		})
+	it("enter address", function{
+		browser.url("http://automationpractice.com/index.php")
+		const address=$('//input[@id='address1']/preceding-sibling::label')
+		address.setvalue('Kamala Apartment Flt4-B')
+		const city=('#city')
+		city.setValue('jersey city')
+		$('#id_state).selectByVisibleText('New Jersey')
+		const postcode=$('#postcode')
+		postcode.setValue('07030')
+		$(#id_country).selectByVisibleText('United States')
+		const mobiledetails =$('#phone_mobile')
+		mobiledetails.setValue('9066760367')
+		const aliasId = $('#alias)
+		aliasId.setValue("No3 Govt Colony)
+		const registerLink=$('#submitAccount)
+		registerLink.click();
+		})
+})
